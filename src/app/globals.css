@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --color-ink: #0e0e0c;
+  --color-panel: #171713;
+  --color-ivory: #f7f4ec;
+  --color-ivory-dim: #c9c2b4;
+  --color-brass: #ad8a5c;
+  --color-brass-dim: #8a7355;
+}
+
+@theme inline {
+  --color-ink: var(--color-ink);
+  --color-panel: var(--color-panel);
+  --color-ivory: var(--color-ivory);
+  --color-ivory-dim: var(--color-ivory-dim);
+  --color-brass: var(--color-brass);
+  --color-brass-dim: var(--color-brass-dim);
+  --font-display: var(--font-cormorant), "Georgia", serif;
+  --font-sans: var(--font-inter), "Helvetica Neue", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-ivory);
+  font-family: var(--font-sans);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--color-brass);
+  font-weight: 500;
+}
+
+.rule {
+  height: 1px;
+  width: 2.5rem;
+  background: var(--color-brass-dim);
+}
+
+.btn-reserve {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-brass-dim);
+  color: var(--color-ivory);
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.75rem;
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease;
+}
+
+.btn-reserve:hover {
+  background-color: var(--color-brass);
+  border-color: var(--color-brass);
+  color: var(--color-ink);
+}
+
+.btn-reserve:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
