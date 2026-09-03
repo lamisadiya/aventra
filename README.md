@@ -1,10 +1,7 @@
-# Stube Lindenhof — Fine Dining Website
+# Aventra — Fine Dining Website
 
 A Next.js (App Router) + TypeScript + Tailwind CSS v4 reimplementation of a
-fine-dining restaurant website, inspired by the structure and visual language
-of restaurantzimmerl.at. All copy, the restaurant name, and photography are
-original/placeholder content created for this build — no text or images were
-copied from the source site.
+fine-dining restaurant website.
 
 ## Stack
 
@@ -47,23 +44,5 @@ src/
     PlaceholderImage.tsx    Stand-in for real photography (gradient + label)
     Reveal.tsx              Scroll-triggered fade-in (IntersectionObserver)
   lib/
-    content.ts             All site copy as typed data (easy to swap in real content)
+    content.ts             All site copy as typed data 
 ```
-
-## Swapping in real content
-
-1. Replace the values in `src/lib/content.ts` with your restaurant's actual
-   copy, address, and hours.
-2. Replace `PlaceholderImage` usages with real `next/image` components once
-   you have photography — the surrounding grid layouts (aspect ratios, spans)
-   are already tuned and can stay as-is.
-3. Update `reserveUrl` in `content.ts` to point to your real booking system.
-4. Update metadata in `layout.tsx` and the legal pages.
-
-## Notes
-
-- Color palette, typography, and copy are original creative work — not
-  copied from any existing restaurant's site.
-- Reduced-motion preferences are respected (animations are disabled via
-  `prefers-reduced-motion`).
-- All interactive elements have visible focus states for keyboard navigation.
